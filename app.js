@@ -4,9 +4,18 @@
 
 
 class personAccount{
-    constructor(firstName,lastName,income,expense,addInc,addExp){
+    constructor(firstName,lastName,income,incomeDescription,expense,expenseDescription,addInc,addExp){
         this.firstName = firstName, 
         this.lastName = lastName,
+        this.incomes = [{
+                         income,
+                         incomeDescription
+                     }]
+         this.expenses = [{
+                         expense,
+                         expenseDescription
+                        
+                     }]
         this.income = income,
         this.expense = expense,
         this.addInc = addInc,
@@ -16,7 +25,7 @@ class personAccount{
     totalExpenses  = () => this.expense + this.addExp
     accountBalance = () => `your current Account Balance is ${this.totalIncome() - this.totalExpenses()}`
 }
-const account = new personAccount("salman","imran",20000,16000,4000,1500);
+const account = new personAccount("salman","imran",20000,"salary Amount",16000,"expense Amount",4000,1500);
 console.log(account.accountBalance())
 
 
@@ -69,5 +78,5 @@ class autoMobile
         
     }
 const vehical = new autoMobile("ford",2019,"red","manual");
-console.log(vehical);
+console.log(vehical.start());
 
